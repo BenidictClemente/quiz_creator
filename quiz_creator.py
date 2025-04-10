@@ -1,29 +1,28 @@
 def main():
-    with open("quiz_data.txt", "a", encoding="utf-8") as file:  # Create or open the file
-        while True:
-            # User input: question, choices, correct answer
-            question = input("Enter your question: ")
-            a = input("Choice A: ")
-            b = input("Choice B: ")
-            c = input("Choice C: ")
-            d = input("Choice D: ")
-            correct = input("Correct answer (A/B/C/D): ").upper()
+    with open("quiz_data.txt", "a", encoding="utf-8") as file: #create or open the file
+        while True:#create a loop to keep asking the user for questions and answers
+            #ask the user for the question and answers
+            question = input("Enter the question: ")
+            a = input("Enter answer A")
+            b = input("Enter answer B")
+            c = input("Enter answer C")
+            d = input("Enter answer D")
+            correct = input("Enter the correct answer (A, B, C, or D").strip().upper()
 
-            # Write the input to the file
-            file.write(f"Question: {question}\n")
-            file.write(f"A: {a}\n")
-            file.write(f"B: {b}\n")
-            file.write(f"C: {c}\n")
-            file.write(f"D: {d}\n")
-            file.write(f"Correct: {correct}\n")
-            file.write("-----\n")  # Separator between questions
+            #write the user input to the file
+            file.write(f"{question}\n")
+            file.write(f"A. {a}\n")
+            file.write(f"B. {b}\n")
+            file.write(f"C. {c}\n")
+            file.write(f"D. {d}\n")
+            file.write(f"Correct answer: {correct}\n")
+            file.write("************\n")# seperator between questions
+            
 
-            # Ask if user wants to add more questions
-            more = input("Do you want to add more questions? (yes/no): ")
+            #ask the user if they want to add another question
+            more = input("Do you want to add another question? (yes/no):")
             if more.lower() != "yes":
                 break
 
-    print("✅ Quiz data has been saved to 'quiz_data.txt'.")
-
-# Call the function to run the program
+    print("quiz data has been saved to the file")
 main()
